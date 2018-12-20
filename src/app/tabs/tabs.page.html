@@ -1,0 +1,32 @@
+<ion-tabs>
+
+  <ion-tab tab="data">
+    <ion-router-outlet name="data"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab tab="sensor">
+    <ion-router-outlet name="sensor"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab tab="settings">
+    <ion-router-outlet name="settings"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="data" href="/tabs/(data:data)">
+      <ion-icon name="stats"></ion-icon>
+      <ion-label>Data</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="sensor" href="/tabs/(sensor:sensor)">
+      <ion-icon name="pulse"></ion-icon>
+      <ion-label>Sensor</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" href="/tabs/(settings:settings)">
+      <ion-icon name="switch"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

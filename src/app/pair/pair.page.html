@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pair</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col text-center>
+      <ion-icon name="phone-portrait"></ion-icon>
+      <ion-icon name="code-working"></ion-icon>
+      <ion-icon name="pulse"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <form (onsubmit)="onSubmitID()" padding novalidate>
+    <ion-label floating>Sensor ID Number</ion-label>
+      <ion-item rounded>
+        <ion-input placeholder="sensor ID" type="text" [(ngModel)]="sensorID" (ionChange)="onChange()"></ion-input>
+      </ion-item>
+      <ion-button shape="round" expand="full" color="primary" type="submit" (click)="onSubmitID()" block>Pair</ion-button>
+  </form>
+
+</ion-content>

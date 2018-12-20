@@ -1,0 +1,43 @@
+<!-- Page header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <object type="image/svg+xml" data="./assets/img/logo_aqu.svg" size="4" height="24"></object>
+    </ion-buttons>
+    <ion-title>Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-title padding>PM 2.5 </ion-card-title>
+    
+    
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed" (click)="presentActionSheet()">
+      <ion-fab-button>
+        <ion-icon name="create"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-card-content>
+      <div>
+        <canvas #PM25Chart height="250"></canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-title padding>Temperature</ion-card-title>
+    <ion-card-content>
+      <canvas #TempChart height="250"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-title padding>Monthly Trends</ion-card-title>
+    <ion-card-content>
+      <canvas #trendChart height="250"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

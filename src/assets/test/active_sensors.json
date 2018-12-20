@@ -1,0 +1,642 @@
+[
+    {
+        "ID": "S-A-069",
+        "Latitude": "40.6651614",
+        "Longitude": "-111.8008902",
+        "Sensor Source": "airu",
+        "pm25": 0.14,
+        "time": 1543541414674
+    },
+    {
+        "ID": "S-A-139",
+        "Latitude": "40.745322599999994",
+        "Longitude": "-111.91504319999999",
+        "Sensor Source": "airu",
+        "pm25": 10.632,
+        "time": 1543541403793
+    },
+    {
+        "ID": "S-A-144",
+        "Latitude": "40.6031802",
+        "Longitude": "-111.81363200000001",
+        "Sensor Source": "airu",
+        "pm25": 0.446,
+        "time": 1543541380010
+    },
+    {
+        "ID": "S-A-016",
+        "Latitude": "40.73439",
+        "Longitude": "-111.87215920000001",
+        "Sensor Source": "airu",
+        "pm25": 10.679,
+        "time": 1543541356641
+    },
+    {
+        "ID": "S-A-024",
+        "Latitude": "40.7360308",
+        "Longitude": "-111.8530956",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541379506
+    },
+    {
+        "ID": "S-A-011",
+        "Latitude": "40.744750800000006",
+        "Longitude": "-111.8465152",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541397501
+    },
+    {
+        "ID": "S-A-002",
+        "Latitude": "40.741083",
+        "Longitude": "-111.8113",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541364996
+    },
+    {
+        "ID": "S-A-141",
+        "Latitude": "40.7478202",
+        "Longitude": "-111.8858908",
+        "Sensor Source": "airu",
+        "pm25": 2.964,
+        "time": 1543541374532
+    },
+    {
+        "ID": "S-A-013",
+        "Latitude": "40.7293902",
+        "Longitude": "-111.8468032",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541363447
+    },
+    {
+        "ID": "S-A-033",
+        "Latitude": "40.7552952",
+        "Longitude": "-111.87438999999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541381719
+    },
+    {
+        "ID": "S-A-006",
+        "Latitude": "40.727309399999996",
+        "Longitude": "-111.84308300000001",
+        "Sensor Source": "airu",
+        "pm25": 0.679,
+        "time": 1543541412620
+    },
+    {
+        "ID": "S-A-142",
+        "Latitude": "40.728907",
+        "Longitude": "-111.851185",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541381837
+    },
+    {
+        "ID": "S-A-026",
+        "Latitude": "40.7144952",
+        "Longitude": "-111.87302059999999",
+        "Sensor Source": "airu",
+        "pm25": 6.912,
+        "time": 1543541364831
+    },
+    {
+        "ID": "S-A-076",
+        "Latitude": "40.78606979999999",
+        "Longitude": "-111.8694238",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541402161
+    },
+    {
+        "ID": "S-A-023",
+        "Latitude": "40.73933000000001",
+        "Longitude": "-111.8564746",
+        "Sensor Source": "airu",
+        "pm25": 0.107,
+        "time": 1543541384055
+    },
+    {
+        "ID": "S-A-005",
+        "Latitude": "40.772547",
+        "Longitude": "-111.90002480000001",
+        "Sensor Source": "airu",
+        "pm25": 1.643,
+        "time": 1543541387622
+    },
+    {
+        "ID": "S-A-089",
+        "Latitude": "40.720181399999994",
+        "Longitude": "-111.83800480000002",
+        "Sensor Source": "airu",
+        "pm25": 2.561,
+        "time": 1543541403574
+    },
+    {
+        "ID": "S-A-150",
+        "Latitude": "40.6854504",
+        "Longitude": "-111.83960239999999",
+        "Sensor Source": "airu",
+        "pm25": 0.893,
+        "time": 1543541404610
+    },
+    {
+        "ID": "S-A-090",
+        "Latitude": "40.8409556",
+        "Longitude": "-111.91137999999998",
+        "Sensor Source": "airu",
+        "pm25": 11.965,
+        "time": 1543541395099
+    },
+    {
+        "ID": "S-A-116",
+        "Latitude": "40.749754",
+        "Longitude": "-111.80397239999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541390231
+    },
+    {
+        "ID": "S-A-103",
+        "Latitude": "40.734373",
+        "Longitude": "-111.87218519999999",
+        "Sensor Source": "airu",
+        "pm25": 8.86,
+        "time": 1543541377458
+    },
+    {
+        "ID": "S-A-126",
+        "Latitude": "40.744427",
+        "Longitude": "-111.9269",
+        "Sensor Source": "airu",
+        "pm25": 2.643,
+        "time": 1543541409325
+    },
+    {
+        "ID": "S-A-131",
+        "Latitude": "40.795518599999994",
+        "Longitude": "-111.9309496",
+        "Sensor Source": "airu",
+        "pm25": 15.107,
+        "time": 1543541386831
+    },
+    {
+        "ID": "S-A-079",
+        "Latitude": "40.79557433333333",
+        "Longitude": "-111.93096566666668",
+        "Sensor Source": "airu",
+        "pm25": 13.019,
+        "time": 1543541414068
+    },
+    {
+        "ID": "S-A-072",
+        "Latitude": "40.7955105",
+        "Longitude": "-111.9309815",
+        "Sensor Source": "airu",
+        "pm25": 12.236,
+        "time": 1543541390711
+    },
+    {
+        "ID": "S-A-146",
+        "Latitude": "40.735089",
+        "Longitude": "-111.8835464",
+        "Sensor Source": "airu",
+        "pm25": 2.268,
+        "time": 1543541398707
+    },
+    {
+        "ID": "S-A-135",
+        "Latitude": "40.74503180000001",
+        "Longitude": "-111.80855079999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541364335
+    },
+    {
+        "ID": "S-A-095",
+        "Latitude": "40.6262572",
+        "Longitude": "-111.9130764",
+        "Sensor Source": "airu",
+        "pm25": 2,
+        "time": 1543541364956
+    },
+    {
+        "ID": "S-A-053",
+        "Latitude": "40.63485060000001",
+        "Longitude": "-111.8360406",
+        "Sensor Source": "airu",
+        "pm25": 24.105,
+        "time": 1543541366026
+    },
+    {
+        "ID": "S-A-066",
+        "Latitude": "40.74742766666666",
+        "Longitude": "-111.86776383333331",
+        "Sensor Source": "airu",
+        "pm25": 0.193,
+        "time": 1543541415939
+    },
+    {
+        "ID": "S-A-122",
+        "Latitude": "40.6756662",
+        "Longitude": "-111.9476504",
+        "Sensor Source": "airu",
+        "pm25": 1,
+        "time": 1543541389650
+    },
+    {
+        "ID": "S-A-063",
+        "Latitude": "40.694897600000004",
+        "Longitude": "-111.8184634",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541371506
+    },
+    {
+        "ID": "S-A-080",
+        "Latitude": "40.733209",
+        "Longitude": "-111.81710960000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541394184
+    },
+    {
+        "ID": "S-A-077",
+        "Latitude": "40.6460996",
+        "Longitude": "-111.99583399999999",
+        "Sensor Source": "airu",
+        "pm25": 0.123,
+        "time": 1543541414711
+    },
+    {
+        "ID": "S-A-127",
+        "Latitude": "40.7344246",
+        "Longitude": "-111.8721456",
+        "Sensor Source": "airu",
+        "pm25": 6.571,
+        "time": 1543541373418
+    },
+    {
+        "ID": "S-A-039",
+        "Latitude": "40.7391272",
+        "Longitude": "-111.93131220000001",
+        "Sensor Source": "airu",
+        "pm25": 1.911,
+        "time": 1543541371370
+    },
+    {
+        "ID": "S-A-042",
+        "Latitude": "40.796978333333335",
+        "Longitude": "-111.92121733333333",
+        "Sensor Source": "airu",
+        "pm25": 3.786,
+        "time": 1543541416392
+    },
+    {
+        "ID": "S-A-112",
+        "Latitude": "40.7406214",
+        "Longitude": "-111.8782694",
+        "Sensor Source": "airu",
+        "pm25": 4.071,
+        "time": 1543541390872
+    },
+    {
+        "ID": "S-A-083",
+        "Latitude": "40.6460976",
+        "Longitude": "-111.8328736",
+        "Sensor Source": "airu",
+        "pm25": 4.421,
+        "time": 1543541365098
+    },
+    {
+        "ID": "S-A-035",
+        "Latitude": "40.795559000000004",
+        "Longitude": "-111.9310146",
+        "Sensor Source": "airu",
+        "pm25": 13.088,
+        "time": 1543541407689
+    },
+    {
+        "ID": "S-A-040",
+        "Latitude": "40.783216200000005",
+        "Longitude": "-111.8708912",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541409565
+    },
+    {
+        "ID": "S-A-059",
+        "Latitude": "40.6956928",
+        "Longitude": "-111.7878166",
+        "Sensor Source": "airu",
+        "pm25": 0.07,
+        "time": 1543541403195
+    },
+    {
+        "ID": "S-A-021",
+        "Latitude": "40.7769536",
+        "Longitude": "-111.8692426",
+        "Sensor Source": "airu",
+        "pm25": 0.719,
+        "time": 1543541403871
+    },
+    {
+        "ID": "S-A-152",
+        "Latitude": "40.679145",
+        "Longitude": "-111.78523075000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541385102
+    },
+    {
+        "ID": "S-A-017",
+        "Latitude": "40.7493884",
+        "Longitude": "-111.83705979999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541371413
+    },
+    {
+        "ID": "S-A-044",
+        "Latitude": "40.7039242",
+        "Longitude": "-111.9350928",
+        "Sensor Source": "airu",
+        "pm25": 2.911,
+        "time": 1543541362623
+    },
+    {
+        "ID": "S-A-086",
+        "Latitude": "40.738041200000005",
+        "Longitude": "-111.87378340000001",
+        "Sensor Source": "airu",
+        "pm25": 1.86,
+        "time": 1543541375882
+    },
+    {
+        "ID": "S-A-087",
+        "Latitude": "40.788634",
+        "Longitude": "-111.87593079999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541359750
+    },
+    {
+        "ID": "S-A-043",
+        "Latitude": "40.7402746",
+        "Longitude": "-111.82272560000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541414769
+    },
+    {
+        "ID": "S-A-113",
+        "Latitude": "40.7369266",
+        "Longitude": "-111.8331486",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541380370
+    },
+    {
+        "ID": "S-A-007",
+        "Latitude": "40.744136600000004",
+        "Longitude": "-111.83509480000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541381975
+    },
+    {
+        "ID": "S-A-036",
+        "Latitude": "40.739639600000004",
+        "Longitude": "-111.89202",
+        "Sensor Source": "airu",
+        "pm25": 0.333,
+        "time": 1543541374786
+    },
+    {
+        "ID": "S-A-157",
+        "Latitude": "40.7679174",
+        "Longitude": "-111.86271079999999",
+        "Sensor Source": "airu",
+        "pm25": 0.421,
+        "time": 1543541378405
+    },
+    {
+        "ID": "S-A-068",
+        "Latitude": "40.7086904",
+        "Longitude": "-111.83818760000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541382510
+    },
+    {
+        "ID": "S-A-052",
+        "Latitude": "40.646547166666664",
+        "Longitude": "-111.85300266666667",
+        "Sensor Source": "airu",
+        "pm25": 4.632,
+        "time": 1543541417642
+    },
+    {
+        "ID": "S-A-138",
+        "Latitude": "40.788944",
+        "Longitude": "-111.92063599999999",
+        "Sensor Source": "airu",
+        "pm25": 2.228,
+        "time": 1543541394376
+    },
+    {
+        "ID": "S-A-075",
+        "Latitude": "40.688306999999995",
+        "Longitude": "-112.0141404",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541384438
+    },
+    {
+        "ID": "S-A-027",
+        "Latitude": "40.730534999999996",
+        "Longitude": "-111.8742672",
+        "Sensor Source": "airu",
+        "pm25": 2.281,
+        "time": 1543541364581
+    },
+    {
+        "ID": "S-A-091",
+        "Latitude": "40.574394999999996",
+        "Longitude": "-111.9560152",
+        "Sensor Source": "airu",
+        "pm25": 0.902,
+        "time": 1543541367598
+    },
+    {
+        "ID": "S-A-162",
+        "Latitude": "40.489298000000005",
+        "Longitude": "-112.051591",
+        "Sensor Source": "airu",
+        "pm25": 1.946,
+        "time": 1543541407225
+    },
+    {
+        "ID": "S-A-094",
+        "Latitude": "40.6905576",
+        "Longitude": "-111.790102",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541370400
+    },
+    {
+        "ID": "S-A-176",
+        "Latitude": "40.728533799999994",
+        "Longitude": "-111.88134720000001",
+        "Sensor Source": "airu",
+        "pm25": 0.632,
+        "time": 1543541402406
+    },
+    {
+        "ID": "S-A-082",
+        "Latitude": "40.6768062",
+        "Longitude": "-111.79385579999999",
+        "Sensor Source": "airu",
+        "pm25": 0.75,
+        "time": 1543541393696
+    },
+    {
+        "ID": "S-A-137",
+        "Latitude": "40.7343446",
+        "Longitude": "-111.8721416",
+        "Sensor Source": "airu",
+        "pm25": 6.912,
+        "time": 1543541398019
+    },
+    {
+        "ID": "S-A-012",
+        "Latitude": "40.6204384",
+        "Longitude": "-111.8456914",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541385970
+    },
+    {
+        "ID": "S-A-014",
+        "Latitude": "40.750068600000006",
+        "Longitude": "-111.9063054",
+        "Sensor Source": "airu",
+        "pm25": 5.439,
+        "time": 1543541397679
+    },
+    {
+        "ID": "S-A-167",
+        "Latitude": "40.5634046",
+        "Longitude": "-111.9275352",
+        "Sensor Source": "airu",
+        "pm25": 2.123,
+        "time": 1543541373819
+    },
+    {
+        "ID": "S-A-110",
+        "Latitude": "40.80409575",
+        "Longitude": "-111.94679875",
+        "Sensor Source": "airu",
+        "pm25": 0.772,
+        "time": 1543541369679
+    },
+    {
+        "ID": "S-A-088",
+        "Latitude": "40.7424482",
+        "Longitude": "-111.92079059999999",
+        "Sensor Source": "airu",
+        "pm25": 6.75,
+        "time": 1543541409770
+    },
+    {
+        "ID": "S-A-170",
+        "Latitude": "40.788174999999995",
+        "Longitude": "-111.87513659999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541406584
+    },
+    {
+        "ID": "S-A-145",
+        "Latitude": "40.7840774",
+        "Longitude": "-111.7390762",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541383178
+    },
+    {
+        "ID": "S-A-037",
+        "Latitude": "40.7879998",
+        "Longitude": "-111.8681832",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541406312
+    },
+    {
+        "ID": "S-A-169",
+        "Latitude": "40.662968",
+        "Longitude": "-111.93230259999999",
+        "Sensor Source": "airu",
+        "pm25": 0.393,
+        "time": 1543541365529
+    },
+    {
+        "ID": "S-A-081",
+        "Latitude": "40.7820816",
+        "Longitude": "-111.87087220000001",
+        "Sensor Source": "airu",
+        "pm25": 0.036,
+        "time": 1543541398425
+    },
+    {
+        "ID": "S-A-160",
+        "Latitude": "40.7799232",
+        "Longitude": "-111.86944840000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541372835
+    },
+    {
+        "ID": "S-A-159",
+        "Latitude": "40.7630762",
+        "Longitude": "-111.92111279999999",
+        "Sensor Source": "airu",
+        "pm25": 2.386,
+        "time": 1543541387563
+    },
+    {
+        "ID": "S-A-047",
+        "Latitude": "40.7800932",
+        "Longitude": "-111.74631839999999",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541401596
+    },
+    {
+        "ID": "S-A-161",
+        "Latitude": "40.7454268",
+        "Longitude": "-111.88136560000001",
+        "Sensor Source": "airu",
+        "pm25": 0.632,
+        "time": 1543541377276
+    },
+    {
+        "ID": "S-A-166",
+        "Latitude": "40.784532",
+        "Longitude": "-111.87068500000001",
+        "Sensor Source": "airu",
+        "pm25": 0,
+        "time": 1543541386794
+    },
+    {
+        "ID": "S-A-085",
+        "Latitude": "40.77205425",
+        "Longitude": "-111.86130125000001",
+        "Sensor Source": "airu",
+        "pm25": 1.474,
+        "time": 1543541384309
+    }
+]

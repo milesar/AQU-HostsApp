@@ -1,0 +1,62 @@
+<!-- Page header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <object type="image/svg+xml" data="./assets/img/logo_aqu.svg" size="4" height="24"></object>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Page content -->
+<ion-content padding id="settings">
+  <!-- Warnings and Alerts -->
+  <div id="settings-markdown6" class="show-list-numbers-and-dots">
+    <p style="color:#000000;font-size:24px;">
+      Warnings
+    </p>
+  </div>
+  <ion-item id="settings-limitalerts">
+    <ion-label>
+      Send alerts
+    </ion-label>
+    <ion-toggle checked="true"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Alert Sensitivity</ion-label>
+    <ion-select value="unhealthy" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="moderate">Moderate</ion-select-option>
+      <ion-select-option value="sensitive">Unhealthy (Sensitive Groups)</ion-select-option>
+      <ion-select-option value="unhealthy">Unhealthy</ion-select-option>
+      <ion-select-option value="hazardous">Hazardous</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Sensor Pairing -->
+  <ion-list>
+  <div id="settings-markdown6" class="show-list-numbers-and-dots">
+    <p style="color:#000000;font-size:24px;">
+      Sensor Pairing
+    </p>
+  </div>
+  <ion-button expand="full" shape="round" fill='outline' (click)= "pairWithAnotherSensor()">SYNC WITH A DIFFERENT SENSOR &nbsp;&nbsp;<ion-icon name="sync"></ion-icon>
+  </ion-button>
+
+  <!-- Chart data range -->
+  <div id="settings-markdown7" class="show-list-numbers-and-dots">
+    <p style="color:#000000;font-size:24px;">
+      Chart Data Range
+    </p>
+  </div>
+  <form id="settings-form5" padding>
+    <ion-label slot="start">Days</ion-label>
+    <ion-item id="settings-range2">
+      <ion-range min="1" max="7" step="1" value="3" snaps="true">
+        
+      </ion-range>
+    </ion-item>
+  </form>
+    
+  </ion-list>
+</ion-content>
+
