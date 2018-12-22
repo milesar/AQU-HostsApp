@@ -5,6 +5,8 @@ import { Storage } from '@ionic/storage';
 import { TimerObservable } from "rxjs/observable/TimerObservable";
 import { ActionSheetController } from '@ionic/angular';
 import { Observable } from "rxjs";
+import { FormControl } from '@angular/forms';
+
 import 'rxjs/add/operator/takeWhile';
 
 @Component({
@@ -62,7 +64,7 @@ export class DataPage {
       console.log(val);
     });
     this.setDates();
-    this.sensorID = "S-A-187";
+    this.sensorID = "S-A-167";
     
     this.baseUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.baseInterval}`;
     this.avgPM25Url = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.dailyStartDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.dailyInterval}`;
@@ -229,32 +231,38 @@ export class DataPage {
         role: 'destructive',
         icon: 'bonfire',
         handler: () => {
-          console.log('Fire observation');
+          console.log('observed a fire');
         }
       }, {
         text: 'Barbecue',
         icon: 'bonfire',
         handler: () => {
-          console.log('Share clicked');
+          console.log('observed a barbeque');
         }
       }, {
         text: 'Construction',
         icon: 'bonfire',
         handler: () => {
-          console.log('Play clicked');
+          console.log('observed construction');
         }
       }, {
         text: 'Windy',
         icon: 'bonfire',
         handler: () => {
-          console.log('Favorite clicked');
+          console.log('observed wind');
         }
-      }, {
+        }, {
+          text: 'Fireworks',
+          icon: 'bonfire',
+          handler: () => {
+            console.log('observed fireworks');
+          }
+        },{
         text: 'Nevermind',
         icon: 'close',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+          console.log('observation cancelled');
         }
       }]
     });
@@ -286,7 +294,7 @@ export class DataPage {
               line: {
                 tension: 0, // disables bezier curves
                 borderJoinStyle: 'round',
-                borderWidth: 2
+                borderWidth: 1
               },
               point: {
                 radius: 0

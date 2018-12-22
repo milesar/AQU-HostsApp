@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
-import { FormBuilder } from '@angular/forms';
 
 import 'rxjs/add/operator/takeWhile';
 
@@ -15,9 +15,10 @@ import 'rxjs/add/operator/takeWhile';
 
 export class PairPage implements OnInit {
 
-  private sensorID: string = "S-A-187";
+  private sensorID: string = "S-A-167";
   private activeSensors: Array<String>;
   private activeSensorUrl: string = "https://air.eng.utah.edu/dbapi/api/liveSensors/airU";
+  private getID: FormGroup;
 
   constructor(private http: HttpClient, 
               private storage: Storage, 
@@ -26,7 +27,9 @@ export class PairPage implements OnInit {
               public toastController: ToastController,
               private formBuilder: FormBuilder
               ) { 
-    
+    this.getID = this.formBuilder.group({
+      userInputID: ['']
+    });
     this.activeSensors = new Array<String>();
   }
 
