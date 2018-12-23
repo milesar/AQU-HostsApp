@@ -12,12 +12,12 @@
       <ion-icon name="pulse"></ion-icon>
     </ion-col>
   </ion-row>
-  <form (onsubmit)="onSubmitID()" padding novalidate>
+  
     <ion-label floating>Sensor ID Number</ion-label>
       <ion-item rounded>
-        <ion-input formControlName="userInputID" placeholder="sensor ID" type="text" (ionChange)="onChange()"></ion-input>
+        <ion-input placeholder="sensor ID" [(ngModel)]="sensorID" type="text"></ion-input>
       </ion-item>
       <ion-button shape="round" expand="full" color="primary" type="submit" (click)="onSubmitID()" block>Pair</ion-button>
-  </form>
+
 
 </ion-content>

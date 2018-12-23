@@ -22,6 +22,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PairPage]
+  declarations: [PairPage],
+  entryComponents: [PairPage],
 })
 export class PairPageModule {}

@@ -162,7 +162,6 @@ export class DataPage {
           .subscribe(data => {
             this.setDates();
             console.log("pull averages");
-            this.dailypm25data.length = 0;
         
             data['data'].forEach((element) => {
               this.dailypm25data.push({ x: <Date>element.time, y: <Number>element.pm25 });
@@ -179,9 +178,7 @@ export class DataPage {
         this.http.get(this.avgTempUrl)
           .subscribe(data => {
             this.setDates();
-            console.log("pull averages");
-            this.dailyTempdata.length = 0;
-
+            console.log("pull averages: " + <string>this.dailyTempdata.length.toString());
             data['data'].forEach((element) => {
               this.dailyTempdata.push({ x: <Date>element.time, y: <Number>element.temperature });
             });

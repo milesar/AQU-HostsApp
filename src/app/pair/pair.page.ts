@@ -15,10 +15,10 @@ import 'rxjs/add/operator/takeWhile';
 
 export class PairPage implements OnInit {
 
-  private sensorID: string = "S-A-167";
+  private sensorID: string = "S-A-167"; //S-A-167
   private activeSensors: Array<String>;
   private activeSensorUrl: string = "https://air.eng.utah.edu/dbapi/api/liveSensors/airU";
-  private getID: FormGroup;
+  private getSensorIDForm: FormGroup;
 
   constructor(private http: HttpClient, 
               private storage: Storage, 
@@ -27,7 +27,7 @@ export class PairPage implements OnInit {
               public toastController: ToastController,
               private formBuilder: FormBuilder
               ) { 
-    this.getID = this.formBuilder.group({
+    this.getSensorIDForm = this.formBuilder.group({
       userInputID: ['']
     });
     this.activeSensors = new Array<String>();
@@ -54,15 +54,15 @@ export class PairPage implements OnInit {
   }
 
   async onChange() {
-    this.sensorID = "S-A-069";
-    this.storage.set('sensor_ID', this.sensorID);
-    console.log
+    console.log(<string>this.sensorID);
+    
   }
 
   async onSubmitID() {
     
-    console.log('check active sensors list for: ' + this.sensorID);
-    
+    console.log('check active sensors list for: ' + <string>this.sensorID);
+    this.storage.set('sensor_ID', this.sensorID);
+
     if(this.activeSensors.includes(this.sensorID)){
       console.log('found sensor ' + this.sensorID + 'authenticating');
       this.presentSuccessToast();
