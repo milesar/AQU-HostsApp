@@ -5,7 +5,6 @@ import { Storage } from '@ionic/storage';
 import { TimerObservable } from "rxjs/observable/TimerObservable";
 import { ActionSheetController } from '@ionic/angular';
 import { Observable } from "rxjs";
-import { FormControl } from '@angular/forms';
 
 import 'rxjs/add/operator/takeWhile';
 
@@ -35,12 +34,12 @@ export class DataPage {
   public endDateTime: string = this.end.toISOString();
 
   public sensorID: string = "";
-  public fetchFrequency: number = 600000; // 10 minutes
+  public fetchFrequency: number = 600000; // 10 minutes, 600000
   public baseInterval: string = '10m';
   public dailyInterval: string = '4000m';
 
-  public baseUrl: string = "";
   public avgPM25Url: string = "";
+  public anualPm25TrendUrl: string = "";
   public avgTempUrl: string = "";
   public response: any[];
 
@@ -61,18 +60,39 @@ export class DataPage {
               public actionSheetController: ActionSheetController) {
     this.storage.get('sensor_ID').then((val) => {
       this.sensorID = <string>val;
-      console.log(val);
-    });
-    this.setDates();
-    this.sensorID = "S-A-167";
-    
-    this.baseUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.baseInterval}`;
-    this.avgPM25Url = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.dailyStartDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.dailyInterval}`;
+      this.buildFields();
+      this.pm25data = new Array<Object>();
+      this.Tempdata = new Array<Object>();
+      this.dailypm25data = new Array<Object>();
+      this.alive = true;
+      this.createTrendChart();
+      this.createPM25Chart();
+      this.createTempChart();
+    }).then(() => {
+      this.fetchChartData();
+    }).then(() => this.updateAllCharts());
+  }
+
+  ngDoCheck(): void {
+    this.updateAllCharts();
+  }
+
+  /**
+   * Set the alive flag to false and kill the timer observables.
+   * 
+   */
+  ngOnDestroy() {
+    this.alive = false;
+  }
+
+  /**
+   * Workaround for local storage promise, can be called after sensor_ID has been retrieved...
+   */
+  private buildFields () {
+    this.avgPM25Url = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.baseInterval}`;
+    this.anualPm25TrendUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.dailyStartDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.dailyInterval}`;
     this.avgTempUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=temperature&timeInterval=${this.baseInterval}`;
-    this.pm25data = new Array<Object>();
-    this.Tempdata = new Array<Object>();
-    this.dailypm25data = new Array<Object>();
-    this.alive = true;
+    this.setDates();
   }
 
   /**
@@ -80,46 +100,58 @@ export class DataPage {
    * 
    */
   private fetchChartData() {
-    this.setDates();
-    console.log(this.baseUrl);
-    TimerObservable.create(0, this.fetchFrequency)
-      .takeWhile(() => this.alive)
-      .subscribe(() => {
-        this.setDates();
-        
-        this.http.get(this.baseUrl)
-          .subscribe(data => {
-            this.setDates();
-            console.log("pull averaged pm25 data");
-            this.Tempdata.length = 0;
-            this.pm25data.length = 0;
-            data['data'].forEach((element) => {
-              this.Tempdata.push({ x: <Date>element.time, y: <number>element.mean });
-              this.pm25data.push({ x: <Date>element.time, y: <number>element.pm25 });
-              this.averagePM25 += <number>element.pm25;
-          });
-            this.TempChartEl.update();
-            this.PM25ChartEl.update();
-            this.averagePM25 / this.Tempdata.length;
-      });
-    });
+    console.log(this.anualPm25TrendUrl);
 
     TimerObservable.create(0, this.fetchFrequency)
       .takeWhile(() => this.alive)
       .subscribe(() => {
         this.setDates();
+        this.http.get(this.avgPM25Url)
+          .subscribe(data => {
+            this.pm25data = [];
+            data['data'].forEach((element) => {
+              this.pm25data.push({ x: <Date>element.time, y: <number>element.pm25 });
+              this.averagePM25 += <number>element.pm25;
+              });
+          });
 
         this.http.get(this.avgTempUrl)
           .subscribe(data => {
-            this.setDates();
-            console.log("pull averaged temp data");
-            this.Tempdata.length = 0;
+            this.Tempdata = [];
             data['data'].forEach((element) => {
               this.Tempdata.push({ x: <Date>element.time, y: <number>element.mean });
             });
-            this.TempChartEl.update();
           });
-      });
+
+        this.http.get(this.anualPm25TrendUrl)
+          .subscribe(data => {
+            this.setDates();
+            console.log("pull averages");
+            this.dailypm25data = [];
+            data['data'].forEach((element) => {
+              this.dailypm25data.push({ x: <Date>element.time, y: <Number>element.pm25 });
+            });
+          });
+        
+        this.updateAllCharts();
+        console.log("update averaged temp data");
+        console.log("update averaged pm25 data");
+    });
+  }
+
+  updateAllCharts(): void {
+    this.TempChartEl.data.datasets.forEach((dataset) => {
+      dataset.data = this.Tempdata;
+    });
+    this.PM25ChartEl.data.datasets.forEach((dataset) => {
+      dataset.data = this.pm25data;
+    });
+    this.trendChartEl.data.datasets.forEach((dataset) => {
+      dataset.data = this.dailypm25data;
+    });;
+    this.trendChartEl.update();
+    this.PM25ChartEl.update();
+    this.TempChartEl.update();
   }
 
   /**
@@ -151,74 +183,6 @@ export class DataPage {
    * 'Hazardous' 250.5 - 500
    * 
    */
-
-  private fetchDailyChartData() {
-    TimerObservable.create(0, 200000)
-      .takeWhile(() => this.alive)
-      .subscribe(() => {
-        this.setDates();
-
-        this.http.get(this.avgPM25Url)
-          .subscribe(data => {
-            this.setDates();
-            console.log("pull averages");
-        
-            data['data'].forEach((element) => {
-              this.dailypm25data.push({ x: <Date>element.time, y: <Number>element.pm25 });
-            });
-            this.trendChartEl.update();
-          });
-      });
-
-    TimerObservable.create(0, 100000)
-      .takeWhile(() => this.alive)
-      .subscribe(() => {
-        this.setDates();
-        console.log(this.avgTempUrl);
-        this.http.get(this.avgTempUrl)
-          .subscribe(data => {
-            this.setDates();
-            console.log("pull averages: " + <string>this.dailyTempdata.length.toString());
-            data['data'].forEach((element) => {
-              this.dailyTempdata.push({ x: <Date>element.time, y: <Number>element.temperature });
-            });
-            this.trendChartEl.update();
-          });
-      });
-
-  }
-
-  public colors: any = [
-    "rgba(224,79,53,1)",
-    "rgba(241,133,61,1)",
-    "rgba(122,203,177,1)",
-    "rgba(182,230,105,1)",
-    "rgba(121,203,238,1)",
-    "rgba(81,105,194,1)",
-    "rgba(34,39,66,1)"
-  ];
-
-  ngOnInit(): void {
-    this.fetchChartData();
-    this.fetchDailyChartData();
-    this.createTrendChart();
-    this.createPM25Chart();
-    this.createTempChart();
-  }
-
-  ngAfterViewInit() {
-    this.fetchChartData();
-    this.TempChartEl.update();
-    this.PM25ChartEl.update();
-  }
-
-  /**
-   * Set the alive flag to false and kill the timer observables.
-   * 
-   */
-  ngOnDestroy() {
-    this.alive = false;
-  }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
@@ -267,13 +231,13 @@ export class DataPage {
   }
 
   /**
-   *
    * Configure and create the trend chart.
    *
    */
   createTrendChart(): void {
     this.trendChartEl = new Chart(this.trendChart.nativeElement,
         {
+        
           type: 'line',
           data: {
             datasets: [{
@@ -287,6 +251,13 @@ export class DataPage {
           ]
           },
           options: {
+            animation: {
+              duration: 0, // general animation time
+            },
+            hover: {
+              animationDuration: 0, // duration of animations when hovering an item
+            },
+            responsiveAnimationDuration: 0, // animation duration after a resize
             elements: {
               line: {
                 tension: 0, // disables bezier curves
@@ -331,6 +302,9 @@ export class DataPage {
               }],
               yAxes: [
                 {
+                  ticks: {
+                    min: 0
+                  },
                   gridLines: {
                     display: false,
                     color: "rgba(242,242,242,1)"
@@ -348,7 +322,6 @@ export class DataPage {
   }
 
   /**
-   *
    * Configure the pm25 chart, define configuration options
    *
    */
@@ -366,6 +339,13 @@ export class DataPage {
           }]
         },
         options: {
+          animation: {
+            duration: 0, // general animation time
+          },
+          hover: {
+            animationDuration: 0, // duration of animations when hovering an item
+          },
+          responsiveAnimationDuration: 0, // animation duration after a resize
           elements: {
             line: {
               tension: 0, // disables bezier curves
@@ -418,6 +398,9 @@ export class DataPage {
                 scaleLabel: {
                   display: true,
                   labelString: "ug/m^3"
+                },
+                ticks: {
+                  min:0
                 }
               }
             ]
@@ -446,6 +429,13 @@ export class DataPage {
           }]
         },
         options: {
+          animation: {
+            duration: 0, // general animation time
+          },
+          hover: {
+            animationDuration: 0, // duration of animations when hovering an item
+          },
+          responsiveAnimationDuration: 0, // animation duration after a resize
           elements: {
             line: {
               tension: 0, // disables bezier curves
@@ -498,6 +488,9 @@ export class DataPage {
                 scaleLabel: {
                   display: true,
                   labelString: "F"
+                },
+                ticks: {
+                  min: 0
                 }
               }
             ]

@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
-import { Router } from '@angular/router';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
 
 import 'rxjs/add/operator/takeWhile';
@@ -18,18 +16,14 @@ export class PairPage implements OnInit {
   private sensorID: string = "S-A-167"; //S-A-167
   private activeSensors: Array<String>;
   private activeSensorUrl: string = "https://air.eng.utah.edu/dbapi/api/liveSensors/airU";
-  private getSensorIDForm: FormGroup;
+
 
   constructor(private http: HttpClient, 
               private storage: Storage, 
               public navCtrl: NavController,
               public alertController: AlertController,
               public toastController: ToastController,
-              private formBuilder: FormBuilder
               ) { 
-    this.getSensorIDForm = this.formBuilder.group({
-      userInputID: ['']
-    });
     this.activeSensors = new Array<String>();
   }
 
@@ -42,20 +36,14 @@ export class PairPage implements OnInit {
           this.activeSensors.push(sensor.ID);
         });
       });
-      console.log(this.activeSensors)
   }
 
   ngOnInit(): void {
     this.getActiveSensorList();
   }
 
-  ngAfterViewInit(): void {
-    
-  }
-
   async onChange() {
-    console.log(<string>this.sensorID);
-    
+    console.log(<string>this.sensorID); 
   }
 
   async onSubmitID() {
@@ -64,11 +52,11 @@ export class PairPage implements OnInit {
     this.storage.set('sensor_ID', this.sensorID);
 
     if(this.activeSensors.includes(this.sensorID)){
-      console.log('found sensor ' + this.sensorID + 'authenticating');
+      console.log('found sensor ' + this.sensorID + ': authenticating');
       this.presentSuccessToast();
       this.navCtrl.navigateForward('/tabs');
     } else {
-      console.log('sensor' + this.sensorID + ' not found');
+      console.log('sensor ' + this.sensorID + ' not found');
       this.presentFailAlert();
     }
   }
