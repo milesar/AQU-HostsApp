@@ -8,6 +8,12 @@ import { Observable } from "rxjs";
 
 import 'rxjs/add/operator/takeWhile';
 
+/**
+ * DataPage handles all live data from the sensor, and provides 3 charts for viewing recent
+ * data (as configured on the settings page). The data pull methods and 3 charts are all built
+ * on this page. Aside from retrieving the sensor ID from local, persistent storage, this page
+ * wholly self containted and not dependent on any other modules or models.
+ */
 @Component({
   selector: 'app-data',
   templateUrl: 'data.page.html',
@@ -25,6 +31,7 @@ export class DataPage {
   public monthRange: number = 365;
   private alive: boolean;
 
+  // Start date is back calculated from 
   public start: Date = new Date(Date.now() - this.dayRange * 86400000);
   public startDateTime: string = this.start.toISOString();
 
@@ -41,6 +48,7 @@ export class DataPage {
   public avgPM25Url: string = "";
   public anualPm25TrendUrl: string = "";
   public avgTempUrl: string = "";
+  public AQIDataCalcUrl: string = "";
   public response: any[];
 
   public trendChartEl: any;
@@ -86,12 +94,14 @@ export class DataPage {
   }
 
   /**
-   * Workaround for local storage promise, can be called after sensor_ID has been retrieved...
+   * Workaround for local storage promise, can be called after sensor_ID has been retrieved. All routes
+   * to AQ&U API are defined here.
    */
   private buildFields () {
     this.avgPM25Url = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.baseInterval}`;
     this.anualPm25TrendUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.dailyStartDateTime}&end=${this.endDateTime}&function=mean&functionArg=pm25&timeInterval=${this.dailyInterval}`;
     this.avgTempUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=temperature&timeInterval=${this.baseInterval}`;
+    this.AQIDataCalcUrl = `https://air.eng.utah.edu/dbapi/api/processedDataFrom?id=${this.sensorID}&sensorSource=airu&start=${this.startDateTime}&end=${this.endDateTime}&function=mean&functionArg=temperature&timeInterval=${this.baseInterval}`;
     this.setDates();
   }
 
@@ -139,6 +149,10 @@ export class DataPage {
     });
   }
 
+  /**
+   * Updates all charts, since ChartJS was somehow not detecting the data change once 
+   * embedded in the TimerObservable for some reason. Overkill, need a better solution.
+   */
   updateAllCharts(): void {
     this.TempChartEl.data.datasets.forEach((dataset) => {
       dataset.data = this.Tempdata;
