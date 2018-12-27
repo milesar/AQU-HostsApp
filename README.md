@@ -4,9 +4,7 @@
 
 This project is for AQ&U sensor hosts, and provides a cross-platform mobile app for managing their sensors along with easier, more 
 direct access to the data they record. It was built with the Ionic v4 beta and Angular (see package.json for all dependencies and other
-frameworks / packages used). The project file structure is organized according the the Angular Style Guide. The author was unfamiliar
-with all of the technologies involved at the start of the project, so any constructive criticism and suggestions for improvement
-are especially welcome.
+frameworks / packages used). The project file structure is organized according the the Angular Style Guide.
 
 <img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot1.png" width="300">
 <img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot2.png" width="300">
@@ -16,8 +14,8 @@ are especially welcome.
 
 ## Getting Started
 
-To run or work on this codebase, you will need the Ionic, Angular, and the Ionic CLI. The rest of the dependencies should be taken
-care of when you run the project for the first time.
+To run or work on this codebase, you will need Ionic, Angular, and the Ionic CLI. The rest of the dependencies should be taken
+care of when you build the project for the first time.
 
 ### Prerequisites
 
@@ -120,7 +118,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-Project ideation and conceptualization
+Project ideation, AQ&U API
 * Pascal Goffin, AQ&U project
 * Ross Whitaker, AQ&U project
 
