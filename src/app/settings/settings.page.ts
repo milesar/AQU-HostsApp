@@ -19,6 +19,7 @@ export class SettingsPage {
   
   async pairWithAnotherSensor(){
     console.log('check active sensors list')
-    this.router.navigateByUrl('pair');
+    console.log("re-pair app")
+    this.navCtrl.navigateBack('/pair');
   }
 }

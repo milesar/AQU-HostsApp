@@ -4,7 +4,7 @@ import { TabsPageModule } from './tabs/tabs.module';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'pair', component: PairPageModule },
+  { path: 'pair', loadChildren: './pair/pair.module#PairPageModule'},
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: '', redirectTo: 'pair', pathMatch: 'full' }
 ];
