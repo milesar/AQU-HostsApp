@@ -16,8 +16,8 @@ are especially welcome.
 
 ## Getting Started
 
-To run or work on this codebase, you will need the Ionic, Angular, and the Ionic CLI. The rest of the dependencies should be taken
-care of when you run the project for the first time.
+To run or work on this codebase, you will need Ionic, Angular, and the Ionic CLI. The rest of the dependencies should be taken
+care of when you build the project for the first time.
 
 ### Prerequisites
 
@@ -120,7 +120,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-Project ideation and conceptualization
+Project ideation, AQ&U API
 * Pascal Goffin, AQ&U project
 * Ross Whitaker, AQ&U project
 
