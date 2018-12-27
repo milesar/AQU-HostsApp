@@ -1,7 +1,4 @@
 [logo]: https://github.com/milesar/AQU-HostsApp/blob/master/resources/logo_aqu.png
-[screenshot1]: https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot1.png
-[screenshot2]: https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot2.png
-[screenshot3]: https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot3.png
 ![logo]
 # Hybrid-Mobile app for AQ&U sensor hosts.
 
@@ -10,9 +7,11 @@ direct access to the data they record. It was built with the Ionic v4 beta and A
 frameworks / packages used). The project file structure is organized according the the Angular Style Guide. The author was unfamiliar
 with all of the technologies involved at the start of the project, so any constructive criticism and suggestions for improvement
 are especially welcome.
-![screenshot1]
-![screenshot2]
-![screenshot3
+
+<img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot1.png" width="300">
+<img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot2.png" width="300">
+<img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot3.png" width="300">
+
 
 
 ## Getting Started
@@ -50,6 +49,8 @@ Once built, you can launch a test server to run the app in a browser 'lab'
 ```
 $ ionic lab -c
 ```
+<img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/IonicLab.png" width="300">
+Screenshot of project running in Ionic 'Lab'
 
 ## Deploying / testing on iOS (with Cordova)
 
