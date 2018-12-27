@@ -49,7 +49,7 @@ Once built, you can launch a test server to run the app in a browser 'lab'
 ```
 $ ionic lab -c
 ```
-<img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/IonicLab.png" width="300">
+<img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/IonicLab.png" width="900">
 Screenshot of project running in Ionic 'Lab'
 
 ## Deploying / testing on iOS (with Cordova)
