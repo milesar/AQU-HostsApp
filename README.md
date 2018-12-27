@@ -118,7 +118,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-Project ideation, AQ&U API
+Project leadership, ideation, and AQ&U API
 * Pascal Goffin, AQ&U project
 * Ross Whitaker, AQ&U project
 
