@@ -4,7 +4,7 @@
 
 This project is for AQ&U sensor hosts, and provides a cross-platform mobile app for managing their sensors along with easier, more 
 direct access to the data they record. It was built with the Ionic v4 beta and Angular (see package.json for all dependencies and other
-frameworks / packages used). The project file structure is organized according the the Angular Style Guide.
+frameworks / packages used). The project file structure is organized according to the Angular Style Guide.
 
 <img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot1.png" width="300">
 <img src="https://github.com/milesar/AQU-HostsApp/blob/master/resources/Screenshot2.png" width="300">
@@ -64,7 +64,7 @@ Once installed, simply run the following command to test:
 ```
 $ ionic cordova run ios -l
 ```
-Finally, to production build can be created with the following command:
+Finally, the production build can be created with the following command:
 ```
 $ ionic cordova build ios --prod
 ```
@@ -123,7 +123,7 @@ Project leadership, ideation, and AQ&U API
 * Ross Whitaker, AQ&U project
 
 Component Technology Support
-* The documentation for all of the technologies involved, and all the hard word that went into them. Would never have been able to pick them up and run without them.
+* The documentation for all of the technologies involved, and all the hard work that went into them. I would never have been able to pick them up and run without them.
 
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
