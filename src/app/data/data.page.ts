@@ -504,7 +504,7 @@ export class DataPage {
                   labelString: "F"
                 },
                 ticks: {
-                  min: 0
+                  min: -10
                 }
               }
             ]

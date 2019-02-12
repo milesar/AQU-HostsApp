@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
