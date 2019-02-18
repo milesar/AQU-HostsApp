@@ -21,9 +21,9 @@ import 'rxjs/add/operator/takeWhile';
 })
 
 export class PairPage implements OnInit {
-  private sensorID: string = "your sensor ID, i.e. 'S-A-167'";
-  private activeSensors: Array<String>;
-  private activeSensorUrl: string = "https://air.eng.utah.edu/dbapi/api/liveSensors/airU";
+  public sensorID: string = "your sensor ID, i.e. 'S-A-167'";
+  public activeSensors: Array<String>;
+  public activeSensorUrl: string = "https://air.eng.utah.edu/dbapi/api/liveSensors/airU";
 
 
   constructor(private http: HttpClient, 
