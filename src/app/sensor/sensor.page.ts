@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
 export class SensorPage {
   public latestPointUrl: string = "";
 
-  public fetchFrequency: number = 600000; // 10 minute, 600000
+  public fetchFrequency: number = 60000; // 10 minute, 600000
   public baseInterval: string = '60m';
 
   public humidity: string = "";
