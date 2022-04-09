@@ -51,7 +51,7 @@
     "core-js": "^2.6.0",
     "cross-spawn": "^6.0.5",
     "ionic": "^4.5.0",
-    "moment": "^2.23.0",
+    "moment": "^2.29.2",
     "ng2-charts": "^1.6.0",
     "ngrx-store-localstorage": "^5.1.0",
     "rxjs": "^6.3.3",
